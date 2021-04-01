@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>Tela De Login e Cadastro</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="Cadastro.css" media="screen">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <!--===============================================================================================-->  
+      
+    <!--===============================================================================================-->
+        
+</head>
+<body>
+  <div class="fullscreen">
+		<div class="myAlert-top alert alert-success">
+		<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+		<strong>Sucesso!</strong> Seu Cadastro Foi Realizado
+		</div>
+		<div class="myAlert-bottom alert alert-danger">
+		<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+		  <strong>Error</strong> Não foi possível cadastrar. Erro no servidor. Tente mais tarde.
+		</div>
+		</div>
+<div class="login-wrap">
+	<div class="login-html">
+		<input id="tab-1" type="radio" name="tab" class="sign-in" checked><label for="tab-1" style="cursor: pointer;" class="tab">Cadastrar</label>
+			<input id="tab-2" type="radio" name="tab" class="sign-up"><label for="tab-2"style="cursor: pointer;" class="tab">Login</label>
+		<div class="login-form">
+			<div class="sign-in-htm">
+				<div class="group">
+					<label for="user" class="label">Nome</label>
+					<input id="name" placeholder="Seu Nome" type="text" class="input" required>
+				</div>
+				<div class="group">
+					<label for="email" class="label">Email</label>
+					<input id="email" type="email" placeholder="Seu Email" class="input" data-type="email" required>
+				</div>
+                <div class="group">
+					<label for="birthday" class="label">Data De Nascimento</label>
+					<input id="born_date" type="date" class="input"  max="1999-03-23" required>
+				</div>
+                <div class="group">
+					<label for="tel" class="label">Celular *Opcional</label>
+					<input id="phone_number" type="tel" class="input" placeholder="Ex.: 00 0000-0000" name="phone" onkeypress="mask(this, mphone);" onblur="mask(this, mphone);" maxlength="15"  pattern="\(\d{2}\)\s*\d{5}-\d{4}" >
+				</div>
+         <div class="group">
+					<label for="password" class="label">Senha</label>
+					<input id="passwordmodal"  placeholder="Sua Senha" type="password" class="input" data-type="password" required>
+				</div>        
+				<div class="group">
+					<input id="check" type="checkbox" class="check" checked required>
+					<label for="check"><span class="icon"></span> Eu Aceito Os Termos De Uso</label>
+				</div>
+        	<div class="group">
+					<input type="button" class="button"style="cursor: pointer;" value="Termos De Uso">
+				</div>
+				<div class="group">
+					<input type="submit" style="cursor: pointer;" class="button"  value="Cadastrar">
+				</div>
+				<div class="hr"></div>
+				<!--<div class="foot-lnk">
+					<a href="#forgot">Forgot Password?</a>
+				</div>-->
+			</div>
+       <div class="sign-up-htm">
+				<div class="group">
+					<label for="email" class="label">Email</label>
+					<input id="emailadd" type="text" class="input">
+				</div>
+				<div class="group">
+					<label for="pass" class="label">Senha</label>
+					<input id="password" type="password" class="input" data-type="password">
+				</div>
+				<div class="group">
+					<input type="submit" style="cursor: pointer;" class="button"  value="Login">
+				</div>
+				<div class="hr"></div>
+      
+				<div class="foot-lnk">
+					<label style="cursor: pointer;" >Esqueci Minha Senha</label>
+				</div>
+      
+			</div>
+	</div>
+</div>
+		</div>
+
+   
+
+
+
+
+
+
+   
+      <script>
+	      function myAlertTop(){
+          $(".myAlert-top").show();
+          setTimeout(function(){
+            $(".myAlert-top").hide(); 
+          }, 10000);
+          }
+        
+                                
+          
+          function myAlertBottom(){
+          $(".myAlert-bottom").show();
+          setTimeout(function(){
+            $(".myAlert-bottom").hide(); 
+          }, 10000);
+          }	
+		  
+		  
+      function mask(o, f) {
+        setTimeout(function() {
+          var v = mphone(o.value);
+          if (v != o.value) {
+            o.value = v;
+          }
+        }, 1);
+      }
+
+      function mphone(v) {
+        var r = v.replace(/\D/g, "");
+        r = r.replace(/^0/, "");
+        if (r.length > 10) {
+          r = r.replace(/^(\d\d)(\d{5})(\d{4}).*/, "($1) $2-$3");
+        } else if (r.length > 5) {
+          r = r.replace(/^(\d\d)(\d{4})(\d{0,4}).*/, "($1) $2-$3");
+        } else if (r.length > 2) {
+          r = r.replace(/^(\d\d)(\d{0,5})/, "($1) $2");
+        } else {
+          r = r.replace(/^(\d*)/, "($1");
+        }
+        return r;
+      }
+      </script>
+
+   
+
+
+</body>
+</html>
